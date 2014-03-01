@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			css: {
-				files: ['scss/*.scss'],
+				files: ['src/scss/*.scss'],
 				tasks: ['sass'],
 				options: {
 					spawn: false,
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'css/style.css': 'scss/style.scss'
+					'src/css/style.css': 'src/scss/style.scss'
 				}
 			} 
 		}
