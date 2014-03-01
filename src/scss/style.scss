@@ -32,21 +32,26 @@
 }
 
 * {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	background: #88969f url('../images/main_cloud_bg.jpg') no-repeat top center;
+	background: url('../images/main_cloud_bg.jpg') no-repeat top center #88969f;
 	font: 16px/24px "DroidSans", Verdana, Arial, sans-serif;
 	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+	.ie & {
+		text-shadow: 1px 1px 1px #ffffff;
+	}
 }
 
 .ie body {
-	text-shadow: 1px 1px 1px #ffffff;
 }
 
-/* typography */
+/* Typography */
 
 h1 a {
 	color: #ffffff;
@@ -59,24 +64,30 @@ h1 a {
 		-2px 2px 0 #0040aa,
 		2px 2px 0 #0040aa,
 		0 0 10px #ffffff;
+	.ie & {
+		text-shadow: 2px 2px 2px #0040aa;
+	}
 }
 
-.ie h1 a {
-	text-shadow: 2px 2px 2px #0040aa;
-}
-
-h1 a:hover, .menuContent a:hover, .desc a:hover, .menuImg:hover, nav ul li a:hover {
+h1 a:hover,
+.menuContent a:hover,
+.desc a:hover,
+.menuImg:hover,
+nav ul li a:hover {
 	-moz-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
-h1 a:hover, .menuContent a:hover, .menuImg:hover, nav ul li a:hover {
-	-moz-transform: translatey(-5px);
-	-o-transform: translatey(-5px);
-	-webkit-transform: translatey(-5px);
-	transform: translatey(-5px);
+h1 a:hover,
+.menuContent a:hover,
+.menuImg:hover,
+nav ul li a:hover {
+	-moz-transform: translatey(-3px);
+	-o-transform: translatey(-3px);
+	-webkit-transform: translatey(-3px);
+	transform: translatey(-3px);
 }
 
 h1 a:hover {
@@ -92,13 +103,17 @@ h1 a:hover {
 		0 0 10px #ffffff;
 }
 
-h2, h3 {
+h2,
+h3 {
 	color: #0040aa;
 }
 
 h2 {
-	font: 42px/70px "ChunkFiveRegular", Georgia, "Times New Roman", serif;
+	font-family: "ChunkFiveRegular", Georgia, "Times New Roman", serif;
+	font-size: 42px;
 	font-weight: normal;
+	line-height: 1.1;
+	margin: 12px auto;
 	text-align: center;
 }
 
@@ -106,16 +121,19 @@ h2 {
 	margin-bottom: 20px;
 }
 
-h3, .menuContent a {
+h3,
+.menuContent a {
 	font: 30px/42px "ChunkFiveRegular", Georgia, "Times New Roman", serif;
 	font-weight: regular;
 }
 
-p, p.desc:last-child {
+p,
+.desc:last-child,
+.creditDesc {
 	margin-bottom: 1em;
 }
 
-p.desc {
+.desc {
 	margin-bottom: 40px;
 }
 
@@ -139,7 +157,9 @@ a {
 		0 0 5px #ffffff;
 }
 
-.desc a:hover, #credits a:hover {
+.desc a:hover,
+.creditDesc a:hover,
+#credits a:hover {
 	text-shadow:
 		-1px -1px 1px #ffffff,
 		1px -1px 1px #ffffff,
@@ -152,7 +172,7 @@ a {
 	transform: translatey(-2px);
 }
 
-/* layout */
+/* Layout */
 
 #title {
 	margin: 60px auto;
@@ -171,11 +191,11 @@ a {
 	box-shadow: inset 0px 0px 20px #ffffff;
 	margin: 0 auto;
 	padding: 30px 35px;
-	width: 650px;
-}
-
-.ie #container {
-	background-color: #c4cbcf;
+	width: 90%;
+		max-width: 720px;
+	.ie * {
+		background-color: #c4cbcf;
+	}
 }
 
 #container ul {
@@ -196,9 +216,18 @@ a {
 	padding-top: 0 !important;
 }
 
-/* images */
+/* Images */
 
-.menuImg, .menuContent {
+img {
+	max-width: 100%;
+}
+
+.mobileImg {
+	display: none;
+}
+
+.menuImg,
+.menuContent {
 	display: table-cell;
 }
 
@@ -218,15 +247,17 @@ a {
 	box-shadow: 0 0 5px #ffffff;
 }
 
-/* navigation */
+/* Navigation */
 
-nav, #nav {
+nav,
+#nav {
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
 }
 
-nav ul, #nav ul {
+nav ul,
+#nav ul {
 	float: left;
 	margin: 20px auto;
 	position: relative;
@@ -234,7 +265,8 @@ nav ul, #nav ul {
 	text-align: center;
 }
 
-nav ul li, #nav ul li {
+nav ul li,
+#nav ul li {
 	float: left;
 	list-style-type: none;
 	padding: 20px;
@@ -242,7 +274,8 @@ nav ul li, #nav ul li {
 		right: 50%;
 }
 
-nav ul li a, #nav ul li a {
+nav ul li a,
+#nav ul li a {
 	color: #ffffff;
 	font: 24px/30px "ChunkFiveRegular", Georgia, "Times New Roman", serif;
 	text-shadow:
@@ -263,4 +296,64 @@ nav ul li a:hover {
 		1px -1px 5px #ffffff,
 		-1px 1px 5px #ffffff,
 		1px 1px 5px #ffffff;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1050px) {
+	.desktopImg {
+		display: none;
+	}
+	.mobileImg {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	#container {
+		border-radius: 0;
+		width: 100%;
+	}
+	nav ul li,
+	#nav ul li {
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#title {
+		margin: 40px auto;
+	}
+	h1 a {
+		font-size: 48px;
+		line-height: 1.1;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	nav ul,
+	#nav ul {
+		margin: 20px auto 0;
+		li {
+			float: none;
+			padding: 5px;
+		}
+	}
+}
+
+@media screen and (max-width: 380px) {
+	#title {
+		margin: 30px auto;
+	}
+	.menuImg,
+	.menuContent {
+		display: block;
+		text-align: center;
+	}
+	.menuImg {
+		margin: 0 auto 10px;
+	}
+	.menuContent {
+		padding-left: 0;
+	}
 }
