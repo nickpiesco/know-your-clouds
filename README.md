@@ -15,7 +15,8 @@ Stats
 - Images before compression: 358,650B
 - Images after compression with `grunt-contrib-imagemin`: 330,303B *(8% savings)*
 
-- Original page weight on initial load: 459K (3.08s)
+- Original page weight on initial load: 459K (onload: 3.08s)
+- New page weight on initial load: 355K (onload: 1.45s)
 
 Note
 ----
