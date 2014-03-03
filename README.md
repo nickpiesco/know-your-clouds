@@ -9,7 +9,6 @@ It's not news that minifying JS and compressing images saves space, of course; b
 
 Stats
 -----
-
 - JS before minification: 227,988B
 - JS after minification with `grunt-contrib-uglify`: 122,837B *(46% savings)*
 
@@ -17,3 +16,7 @@ Stats
 - Images after compression with `grunt-contrib-imagemin`: 330,303B *(8% savings)*
 
 - Original page weight on initial load: 459K (3.08s)
+
+Note
+----
+One of the modules in `grunt-contrib-imagemin` ran into the Windows path length limit, so that'll have to be installed separately.
