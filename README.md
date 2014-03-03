@@ -8,16 +8,19 @@ I used `low.html`, a typical page, as an example. Minifying the JS saved almost 
 It's not news that minifying JS and compressing images saves space, of course; but thanks to my new friend Grunt, I'm able to do it quickly, painlessly, and automatically.
 
 Stats
------
+
+###JS
 - JS before minification: 227,988B
 - JS after minification with `grunt-contrib-uglify`: 122,837B *(46% savings)*
 
+###Images
 - Images before compression: 358,650B
 - Images after compression with `grunt-contrib-imagemin`: 330,303B *(8% savings)*
 
+###Total
 - Original page weight on initial load: 459K (onload: 3.08s)
-- New page weight on initial load: 355K (onload: 1.45s)
+- New page weight on initial load: 355K (onload: 1.45s) *(23% file size savings, 53% faster load time)*
 
 Note
 ----
-One of the modules in `grunt-contrib-imagemin` ran into the Windows path length limit, so that'll have to be installed separately.
+One of the modules in `grunt-contrib-imagemin` ran into the Windows path length limit, so that'll have to be installed separately on each machine you want to build this on.
