@@ -14,11 +14,8 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: [
-					'src/js/prototype.js',
-					'src/js/scriptaculous.js',
-					'src/js/effects.js',
-					'src/js/builder.js',
-					'src/js/lightbox.js'
+					'src/js/jquery-1.10.2.min.js',
+					'src/js/lightbox-2.6.min.js'
 				],
 				dest: 'dist/js/all.js'
 			}
