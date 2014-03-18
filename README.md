@@ -25,4 +25,4 @@ Stats
 Notes
 -----
 - As it turns out, the by-now ancient lightbox library was slightly broken in Chrome, so I had to update it to the latest version. The new, fully-functional version weighs in at 345KB (onload: 1.52s).
-- One of the modules in `grunt-contrib-imagemin` ran into the Windows path length limit, so that'll have to be installed separately on each machine you want to build this on.
+- I ran into path length issues checking in the Grunt modules (which isn't always great practice anyway), so this will need an `npm install` after cloning before you can build.
